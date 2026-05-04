@@ -193,3 +193,70 @@ h1 {
   padding-top: 12px;
   border-top: 1px solid #e0e0e0;
 }
+
+.password-gate {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f0f2f5;
+}
+
+.password-box {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 40px 32px;
+  width: 100%;
+  max-width: 360px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.password-box h1 {
+  margin-bottom: 4px;
+}
+
+.password-desc {
+  font-size: 14px;
+  color: #666;
+  text-align: center;
+  white-space: pre-line;
+}
+
+.password-box input[type="password"] {
+  padding: 10px 14px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 15px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.password-box input[type="password"]:focus {
+  border-color: #6c63ff;
+}
+
+.password-error {
+  font-size: 13px;
+  color: #e74c3c;
+  text-align: center;
+}
+
+.password-box button {
+  padding: 11px;
+  background: #6c63ff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-top: 4px;
+}
+
+.password-box button:hover {
+  background: #574fd6;
+}
