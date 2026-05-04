@@ -7,6 +7,7 @@ function App() {
     return saved ? JSON.parse(saved) : []
   })
   const [input, setInput] = useState('')
+  const [assigner, setAssigner] = useState('')
   const [filter, setFilter] = useState('all')
 
   useEffect(() => {
@@ -16,8 +17,9 @@ function App() {
   const addTodo = () => {
     const text = input.trim()
     if (!text) return
-    setTodos([...todos, { id: Date.now(), text, done: false }])
+    setTodos([...todos, { id: Date.now(), text, done: false, assigner: assigner.trim() }])
     setInput('')
+    setAssigner('')
   }
 
   const toggleTodo = (id) => {
@@ -48,6 +50,14 @@ function App() {
           onChange={e => setInput(e.target.value)}
           onKeyDown={e => e.key === 'Enter' && addTodo()}
         />
+        <input
+          type="text"
+          className="assigner-input"
+          placeholder="지시자"
+          value={assigner}
+          onChange={e => setAssigner(e.target.value)}
+          onKeyDown={e => e.key === 'Enter' && addTodo()}
+        />
         <button onClick={addTodo}>추가</button>
       </div>
 
@@ -75,6 +85,7 @@ function App() {
               onChange={() => toggleTodo(todo.id)}
             />
             <span>{todo.text}</span>
+            {todo.assigner && <span className="assigner-badge">{todo.assigner}</span>}
             <button className="delete" onClick={() => deleteTodo(todo.id)}>✕</button>
           </li>
         ))}

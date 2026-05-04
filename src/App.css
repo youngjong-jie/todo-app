@@ -67,6 +67,32 @@ h1 {
   background: #574fd6;
 }
 
+.assigner-input {
+  width: 90px;
+  padding: 10px 10px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s;
+  flex-shrink: 0;
+}
+
+.assigner-input:focus {
+  border-color: #6c63ff;
+}
+
+.assigner-badge {
+  background: #ede9ff;
+  color: #6c63ff;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 12px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
 .filter-row {
   display: flex;
   gap: 8px;
